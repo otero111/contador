@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contador</title>
+</head>
+<style type="text/css">
+	*{
+		background-color: black;
+		color: white;
+		text-align: center;
+
+	}
+	button{
+		background: whitesmoke;
+		color: black;
+		margin-top: 20px;
+	}
+	input{
+		color: black;
+		background: white;
+	}
+</style>
+<body>
+<span>Billetes de 5</span>
+<input type="number" id="txt_campo_1" onchange="sumar(this.value * 5);" />
+<br/ >
+<span>Billetes de 10</span>
+<input type="number" id="txt_campo_2" onchange="sumar(this.value * 10);" />
+<br/ >
+<span>Billetes de 20</span>
+<input type="number" id="txt_campo_3" onchange="sumar(this.value * 20);" />
+<br/ >
+<span>Billetes de 50</span>
+<input type="number" id="txt_campo_4" onchange="sumar(this.value * 50);" />
+<br/ >
+<span>Billetes de 100</span>
+<input type="number" id="txt_campo_5" onchange="sumar(this.value * 100);" />
+<br/ >
+<span>Billetes de 200</span>
+<input type="number" id="txt_campo_6" onchange="sumar(this.value * 200);" />
+<br/ >
+<span>Billetes de 500</span>
+<input type="number" id="txt_campo_7" onchange="sumar(this.value * 500);" />
+<br/ >
+<span>Billetes de 1000</span>
+<input type="number" id="txt_campo_8" onchange="sumar(this.value * 1000);" />
+<br/ >
+<span>El resultado es: </span> <span id="spTotal"></span>
+
+
+<button onclick="sumar">Sumar</button>
+
+
+
+
+
+<script type="text/javascript">
+
+	/* Sumar dos números. */
+function sumar (valor) {
+    var total = 0;	
+    valor = parseInt(valor); // Convertir el valor a un entero (número).
+	
+    total = document.getElementById('spTotal').innerHTML;
+	
+    // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
+    total = (total == null || total == undefined || total == "") ? 0 : total;
+
+    /* Esta es la suma. */
+   total = (parseInt(total) + parseInt(valor));
+	
+    // Colocar el resultado de la suma en el control "span".
+    document.getElementById('spTotal').innerHTML = total;
+}
+
+
+</script>
+</body>
+</html>
